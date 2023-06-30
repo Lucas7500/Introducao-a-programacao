@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 
-int main(void)
+int main()
 {
     int num;
 
@@ -21,4 +21,6 @@ int main(void)
     {
         printf("O numero eh nulo\n");
     }
+
+    return 0;
 }
