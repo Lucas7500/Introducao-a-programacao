@@ -12,6 +12,7 @@ int main()
     scanf("%d", &n);
 
     factorialN = factorial(n);
+
     printf("Fatorial de %d: %ld\n", n, factorialN);
 
     return 0;
