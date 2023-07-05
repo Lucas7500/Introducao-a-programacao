@@ -1,0 +1,10 @@
+Como aprender recursão?
+
+I. Compreender o problema resolvendo-o, primeiramente, de forma iterativa.
+
+II. Entender e aplicar as três leis da recursão:
+1. Um algoritmo recursivo deve possuir um caso base (base case).
+2. Um algoritmo recursivo deve modificar o seu estado e se aproximar do caso base.
+3. Um algoritmo recursivo deve chamar a si mesmo, recursivamente.
+
+III. Entender a recursão como uma forma de iteração.
