@@ -49,7 +49,7 @@ int binarySearch(int vet[], int element, int limInf, int limSup)
             limInf = termoMedio + 1;
         }
 
-        if (limInf == limSup)
+        if (limInf > limSup)
         {
             return 0;
         }
