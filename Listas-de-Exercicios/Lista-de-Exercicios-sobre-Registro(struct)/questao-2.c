@@ -88,6 +88,7 @@ int main()
         }
     }
 
+    // e)
     for (int i = 0; i < tamVet; i++)
     {
         if (alunos[i].approved == True)
@@ -100,23 +101,7 @@ int main()
         }
     }
 
-    for (int i = 0; i < tamVet; i++)
-    {
-        if (alunos[i].notas[0] == highestGradeFT)
-        {
-            printf("O aluno com a maior nota na primeira prova foi o %s\n", alunos[i].name);
-        }
-
-        if (alunos[i].notas[0] == highestAvg)
-        {
-            printf("O aluno com a maior media foi o %s\n", alunos[i].name);
-        }
-
-        if (alunos[i].notas[0] == lowestAvg)
-        {
-            printf("O aluno com a menor media foi o %s\n", alunos[i].name);
-        }
-    }
+    // A fazer b) c) e d)
 
     return 0;
 }
