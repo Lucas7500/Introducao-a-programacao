@@ -7,6 +7,7 @@
 // e) Para cada aluno diga se ele foi aprovado ou reprovado, considerando o valor 6 para aprovação.
 
 #include <stdio.h>
+#include <string.h>
 
 #define True 1
 #define False 0
@@ -26,6 +27,7 @@ int main()
     // a)
     int tamVet;
     float highestGradeFT = 0, highestAvg = 0, lowestAvg = 0, avg;
+    char highestGradeFTStudent[30], highestAvgStudent[30], lowestAvgStudent[30];
 
     printf("Quantos alunos voce deseja registrar? ");
     scanf("%d%*c", &tamVet);
@@ -48,18 +50,24 @@ int main()
             printf("Nota da prova %d: ", j + 1);
             scanf("%f", &alunos[i].notas[j]);
         }
+
+        scanf("%*c");
+        printf("\n");
     }
 
     printf("\n");
 
-    float sumGrades = 0;
+    float sumGrades;
 
     for (int i = 0; i < tamVet; i++)
     {
         if (alunos[i].notas[0] > highestGradeFT)
         {
             highestGradeFT = alunos[i].notas[0];
+            strcpy(highestGradeFTStudent, alunos[i].name);
         }
+
+        sumGrades = 0;
 
         for (int j = 0; j < 3; j++)
         {
@@ -68,14 +76,22 @@ int main()
 
         avg = sumGrades / 3;
 
-        if (avg > highestAvg)
+        if (i == 0)
+        {
+            highestAvg = alunos[0].notas[0];
+            lowestAvg = alunos[0].notas[0];
+            strcpy(highestAvgStudent, alunos[i].name);
+            strcpy(lowestAvgStudent, alunos[i].name);
+        }
+        else if (avg > highestAvg)
         {
             highestAvg = avg;
+            strcpy(highestAvgStudent, alunos[i].name);
         }
-
-        if (avg < lowestAvg)
+        else if (avg < lowestAvg)
         {
             lowestAvg = avg;
+            strcpy(lowestAvgStudent, alunos[i].name);
         }
 
         if (avg >= 6)
@@ -87,6 +103,11 @@ int main()
             alunos[i].approved = False;
         }
     }
+
+    // b) c) e d)
+    printf("O aluno %s obteve a maior nota na primeira prova.\n", highestGradeFTStudent);
+    printf("O aluno %s obteve a maior media.\n", highestAvgStudent);
+    printf("O aluno %s obteve a menor media.\n", lowestAvgStudent);
 
     // e)
     for (int i = 0; i < tamVet; i++)
@@ -100,8 +121,6 @@ int main()
             printf("O aluno %s foi reprovado\n", alunos[i].name);
         }
     }
-
-    // A fazer b) c) e d)
 
     return 0;
 }
