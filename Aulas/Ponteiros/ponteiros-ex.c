@@ -9,6 +9,7 @@ int main()
 
     // %x imprime memoria em hexadecimal sem 0 antes (X maiúsculo deixa as letras maiúsculas)
     printf("%X\n", &mema);
+    printf("%x\n", &mema);
     printf("%d", a);
 
     return 0;
