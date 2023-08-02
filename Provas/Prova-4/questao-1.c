@@ -33,6 +33,8 @@
 // 7.1  4.2  8.3 1.6    | 5.3
 // 7.5  5.8  5.3 8.9    | 6.9
 
+// Nota: 2.5/2.5
+
 #include <stdio.h>
 #define LINHAS 5
 #define COLUNAS 5

@@ -1,6 +1,8 @@
 // Resolver, usando recursão, o problema descrito na Questão 3.
 // A nota desta questão extra poderá ser “diluída” na nota da Prova 4 e/ou na de quaisquer provas anteriores.
 
+// Nota: 1.5/1.5
+
 #include <stdio.h>
 #define MAX 50
 

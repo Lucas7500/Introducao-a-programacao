@@ -7,6 +7,8 @@
 
 // Imagem: https://prnt.sc/Zp7YFz5KVlde
 
+// Nota: 2.5/2.5
+
 #include <stdio.h>
 #define LINHAS 30
 #define COLUNAS 30

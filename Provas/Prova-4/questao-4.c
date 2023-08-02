@@ -6,6 +6,8 @@
 // Obs: A fórmula está sim errada, na fórmula correta a divisão seria feita por n e não por 4
 // Para que meu código represente a fórmula correta, só mudar na linha 47 o 4 por n
 
+// Nota: 2.5/2.5
+
 #include <stdio.h>
 #include <math.h>
 #define N 10

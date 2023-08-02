@@ -31,6 +31,8 @@
 // Saída:
 // -0.750000
 
+// Nota: 2.5/2.5
+
 #include <stdio.h>
 #define MAX 50
 
