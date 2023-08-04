@@ -13,17 +13,15 @@ int Stricmp(char *str1, char *str2);
 
 int main()
 {
-    char t1[25] = "Cesar Caus Portilho";
-    char t2[25] = "CESAR CAUS PORTILHO";
+    char str1[45], str2[45];
 
-    if (Stricmp(t1, t2) == 0)
-    {
-        printf("Iguais");
-    }
-    else
-    {
-        printf("Diferentes");
-    }
+    printf("str1: ");
+    scanf("%[^\n]%*c", str1);
+
+    printf("str1: ");
+    scanf("%[^\n]", str2);
+
+    printf("Output: %d\n", Stricmp(str1, str2));
 
     return 0;
 }
@@ -46,9 +44,18 @@ int Stricmp(char *str1, char *str2)
 
     for (int i = 0; maior[i] != '\0'; i++)
     {
-        if (toupper(str1[i]) != toupper(str2[i]) || i > strlen(menor))
+        if (toupper(str1[i]) < toupper(str2[i]))
         {
             return -1;
+        }
+        else if (toupper(str1[i]) > toupper(str2[i]))
+        {
+            return 1;
+        }
+
+        if (menor[i] = '\0')
+        {
+            return str1[i] == '\0' ? -1 : 1;
         }
     }
 
