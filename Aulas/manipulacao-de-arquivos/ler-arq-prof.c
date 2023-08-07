@@ -1,56 +1,30 @@
 #include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-
-int Stricmp(char *str1, char *str2);
+#include <stdlib.h>
 
 int main()
 {
-    char str1[45], str2[45];
+    FILE *arq;
+    char aux, nomeArq[100];
+    int quantCamposLidos = 0, retorno;
 
-    printf("str1: ");
-    scanf("%[^\n]%*c", str1);
+    printf("Nome do arquivo: ");
+    scanf("%s", nomeArq);
 
-    printf("str1: ");
-    scanf("%[^\n]", str2);
-
-    printf("Output: %d\n", Stricmp(str1, str2));
-
-    return 0;
-}
-
-int Stricmp(char *str1, char *str2)
-{
-    char *maior;
-    char *menor;
-
-    if (strlen(str1) > strlen(str2))
-    {
-        maior = str1;
-        menor = str2;
-    }
+    arq = fopen(nomeArq, "r");
+    if (arq == NULL)
+        printf("Erro ao abrir o arquivo \"%s\"", nomeArq);
     else
     {
-        maior = str2;
-        menor = str1;
+        printf("------ Dados do arquivo:\n\n");
+        // while(fscanf(arq,"%c",&aux) != EOF) {
+        while ((retorno = fscanf(arq, "%c", &aux)) != EOF)
+        {
+            quantCamposLidos++;
+            // printf("#%d %c", retorno, aux);
+            printf("%c", aux);
+        }
+        printf("\n------ Fim dos dados do arquivo\n");
+        printf("\nQuant. de campos lidos: %d", quantCamposLidos);
     }
-
-    for (int i = 0; maior[i] != '\0'; i++)
-    {
-        if (toupper(str1[i]) < toupper(str2[i]))
-        {
-            return -1;
-        }
-        else if (toupper(str1[i]) > toupper(str2[i]))
-        {
-            return 1;
-        }
-
-        if (menor[i] = '\0')
-        {
-            return str1[i] == '\0' ? -1 : 1;
-        }
-    }
-
-    return 0;
+    fclose(arq);
 }

@@ -1,10 +1,5 @@
 // Cesar Caus Portilho e Lucas Moreira Iglesias
 
-// 2. (1,25) (Tema: Ponteiros) Escreva um programa em C que implemente e teste a função 'Stricmp' (clone da
-// função stricmp de comparação de strings, definida em string.h). Deve-se empregar somente ponteiros e
-// notação de ponteiros. Não usar notação de vetor. As únicas funções nativas da string.h que poderão ser
-// utilizadas são: strlen, toupper, tolower.
-
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
