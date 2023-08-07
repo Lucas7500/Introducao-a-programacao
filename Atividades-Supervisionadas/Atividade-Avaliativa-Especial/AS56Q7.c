@@ -45,6 +45,8 @@ int main()
         }
     }
 
+    fclose(fr);
+
     int mat[linhas][colunas];
 
     while (k < (qtdNull * 2))
@@ -81,6 +83,8 @@ int main()
             fprintf(fw, "\n");
         }
     }
+
+    fclose(fw);
 
     return 0;
 }
