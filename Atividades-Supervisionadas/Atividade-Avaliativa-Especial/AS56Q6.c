@@ -42,6 +42,8 @@ int main()
         }
     }
 
+    fclose(fr);
+
     len = i + 1;
     k = 0;
     i = 0;
@@ -106,6 +108,8 @@ int main()
     }
 
     printf("TOTAL DA COMPRA: %.2f\n", total);
+
+    free(pdt);
 
     return 0;
 }
