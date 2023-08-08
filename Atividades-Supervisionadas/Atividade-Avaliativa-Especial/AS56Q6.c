@@ -1,9 +1,4 @@
-// 6. (1,25) (Tema: Arquivos, Definição de Tipos (struct) Alocação Dinâmica) Escreva um programa em C que leia um
-// arquivo contendo o nome e o preço de diversos produtos (separados por linha), e calcule o total da compra. Deve-se
-// criar uma estrutura (struct) Produtos, composta de nome e valor. Em seguida, deve-se criar um ponteiro para essa
-// estrutura. Esse ponteiro será criado por Alocação Dinâmica e seu tamanho também incrementado por Alocação
-// Dinâmica. Após a leitura do arquivo, deve-se imprimir a lista contendo nome e preço de cada produto e, ao final, o
-// total da compra.
+// Cesar Caus Portilho e Lucas Moreira Iglesias
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -19,11 +14,11 @@ typedef struct
 int main()
 {
     char aux;
-    int i = 0, n = 1, k = 0;
     char produto[50][100];
     char precoTemp[10];
-    int len = 0;
+    int i = 0, n = 1, k = 0, len = 0;
 
+    // Cópia dos produtos do arquivo para o vetor de Strings produto
     FILE *fr = fopen("produtos.txt", "r");
     if (fr == NULL)
     {
@@ -51,6 +46,7 @@ int main()
     k = 0;
     i = 0;
 
+    //
     produtos *pdt;
     pdt = (produtos *)malloc(n * sizeof(produtos));
     if (pdt == NULL)
@@ -61,12 +57,22 @@ int main()
     {
         for (int k = 0; k < len; k++)
         {
+            // Ler cada produto de trás pra frente e o primeiro espaço que aparecer definirá a divisão entre o nome e o preço
             for (int j = strlen(produto[k]); j >= 0; j--)
             {
+                // Alocação dinâmica
                 if (i >= n)
                 {
                     pdt = (produtos *)realloc(pdt, (n + 1) * sizeof(produtos));
-                    n++;
+                    if (pdt == NULL)
+                    {
+                        printf("Nao ha memoria suficiente!");
+                        break;
+                    }
+                    else
+                    {
+                        n++;
+                    }
                 }
 
                 if (produto[k][j] == ' ')
