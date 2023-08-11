@@ -4,7 +4,7 @@ void insertionSort(int[], int);
 
 int main()
 {
-    int vet[] = {-1, 5, 17, -10, 9, 100, 45, 54, 67};
+    int vet[] = {2, 3, 5, 1, 4};
     int tamVet = sizeof(vet) / sizeof(vet[0]);
     int element;
 

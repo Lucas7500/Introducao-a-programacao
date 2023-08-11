@@ -49,21 +49,21 @@ int main()
         vetHistorico[i].notaMedia = sum / 4.0;
     }
 
-    printf("MATRICULA\tNOME\t\t\tNOTAS\t\t\t\tNOTA MEDIA");
+    // printf("MATRICULA\tNOME\t\t\tNOTAS\t\t\t\tNOTA MEDIA");
 
-    for (int i = 0; i < 3; i++)
-    {
-        printf("\n%li\t\t\%s\t\t\%.2f %.2f %.2f %.2f\t\t%.2f",
-               vetHistorico[i].matricula,
-               vetHistorico[i].nome,
-               vetHistorico[i].notas[0],
-               vetHistorico[i].notas[1],
-               vetHistorico[i].notas[2],
-               vetHistorico[i].notas[3],
-               vetHistorico[i].notaMedia);
-    }
+    // for (int i = 0; i < 3; i++)
+    // {
+    //     printf("\n%li\t\t\%s\t\t\%.2f %.2f %.2f %.2f\t\t%.2f",
+    //            vetHistorico[i].matricula,
+    //            vetHistorico[i].nome,
+    //            vetHistorico[i].notas[0],
+    //            vetHistorico[i].notas[1],
+    //            vetHistorico[i].notas[2],
+    //            vetHistorico[i].notas[3],
+    //            vetHistorico[i].notaMedia);
+    // }
 
-    printf("\n\n");
+    // printf("\n\n");
 
     FILE *arquivo = fopen("historico.txt", "w");
 
@@ -90,7 +90,16 @@ int main()
 
     fclose(arquivo);
 
-    printf("Arquivo historico.txt criado e preenchido com sucesso!\n\n");
+    arquivo = fopen("historico.txt", "r");
+
+    char aux;
+
+    while (fscanf(arquivo, "%c", &aux) != EOF)
+    {
+        printf("%c", aux);
+    }
+
+    printf("\nArquivo historico.txt criado e preenchido com sucesso!\n\n");
 
     return 0;
 }
